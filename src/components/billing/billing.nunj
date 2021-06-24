@@ -1,0 +1,87 @@
+{% from "../../components/button/button.nunj" import button %}
+
+{% macro billing() %}
+	<div class="billing">
+		<p class="billing__title">Billing Information</p>
+
+		<form class="form">
+			<div class="form__row">
+
+				<label for="check-1" class="form__label">
+					<div class="form__element">Pay with Credit Card</div>
+					<input id="check-1" class="form__input" type="radio" checked="checked" name="radio">
+					<span class="form__checkbox"></span>
+					{# <div class="form__element form__element--text">Pay with Credit Card</div> #}
+				</label>
+			</div>
+			<div class="form__row">
+				<label for="check-2" class="form__label">
+					<div class="form__element">
+						<svg class="form__icon"><use xlink:href="#icon-paypal"></use></svg>
+					</div>
+					<input id="check-2" class="form__input" type="radio" name="radio">
+					<span class="form__checkbox"></span>
+				</label>
+			</div>
+		</form>
+
+		<div class="credit-card">
+			<div class="credit-card__container">
+				<div class="credit-card__row">
+					<label class="credit-card__label">Name on card</label>
+					<input id="card-name" class="credit-card__input" placeholder="Your name" type="text"/>
+				</div>
+			</div>
+			<div class="credit-card__container">
+				<div class="credit-card__row">
+					<label class="credit-card__label">Card number</label>
+					<div class="credit-card__inputs">
+						<input class="credit-card__input credit-card__input--width-100 js-input js-input--number" placeholder="0000" type="text" maxlength="4"/>
+						<input class="credit-card__input credit-card__input--width-100 js-input js-input--number" placeholder="0000" type="text" maxlength="4"/>
+						<input class="credit-card__input credit-card__input--width-100 js-input js-input--number" placeholder="0000" type="text" maxlength="4"/>
+						<input class="credit-card__input credit-card__input--width-100 js-input js-input--number" placeholder="0000" type="text" maxlength="4"/>
+					</div>
+				</div>
+			</div>
+			<div class="credit-card__container">
+				<div class="credit-card__row credit-card__row--flex">
+					<div class="credit-card__wrapper">
+						<label class="credit-card__label">Expire date</label>
+						<input class="credit-card__input credit-card__input--width-100 js-input js-input--number"  placeholder="MM/YY" type="text" maxlength="4"/>
+					</div>
+					<div class="credit-card__wrapper">
+						<label class="credit-card__label">CVV code <span class="credit-card__icon">?</span></label>
+						<input class="credit-card__input credit-card__input--width-100 js-input js-input--number" placeholder="CVV" type="password" maxlength="3"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="privacy">
+			<label class="privacy__label">
+				<div class="privacy__text">Save information of this credit card</div>
+				<input class="privacy__input" type="checkbox" checked>
+				<span class="privacy__checkbox"></span>
+			</label>
+			<label class="privacy__label">
+				<div class="privacy__text">I accept the <a href="#">terms and comditions</a> and the <a href="#">Privacy Policies</a></div>
+				<input class="privacy__input" type="checkbox">
+				<span class="privacy__checkbox"></span>
+			</label>
+		</div>
+		<div class="navigation">
+			{{
+				button({
+					className: '',
+					children: 'Back'
+				})
+			}}
+			{{
+				button({
+					className: 'button--blue',
+					children: 'Check Out'
+				})
+			}}
+		</div>
+	</div>
+{% endmacro %}

@@ -1,0 +1,36 @@
+<div class="sidebar">
+	<div class="basket sidebar__item">
+		<p class="basket__title sidebar__title">My basket</p>
+		<ul class="basket-list">
+			{% for item in basketList %}
+				<li class="basket-list__item">
+					<div class="basket-list__pic">
+						<img class="basket-list__img" src="{% inline item.imgSrc %}"/>
+					</div>
+					<div class="basket-list__info">
+						<p class="basket-list__description">{{item.description}}</p>
+						<div class="basket-list__bottom">
+							<div class="basket-count">
+								<img class="basket-count__btn basket-count__btn--minus" src="{% inline 'minus.svg'%}"/>
+								<input class="basket-count__input" min="0" type="number" value="0">
+								<img class="basket-count__btn basket-count__btn--plus" src="{% inline 'plus.svg'%}"/>
+							</div>
+							<div class="price">
+								<span class="price__currency">$</span>
+								<span class="price__current">{{item.price}}</span>
+							</div>
+						</div>
+						<a class="close basket-list__close"><svg ><use xlink:href="#icon-close"></use></svg></a>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="promo-code sidebar__item">
+		<p class="promo-code__title sidebar__title">Promo code</p>
+		{{ promo() }}
+	</div>
+	<div class="total sidebar__item">
+		{{total()}}
+	</div>
+</div>

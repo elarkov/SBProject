@@ -1,0 +1,10 @@
+{% macro legend(props) %}
+ <div class="legend">
+	{% for item in legendData %}
+		<div class="legend__item">
+			<div class="legend__number">{{item.number}}</div>
+			<div class="legend__text">{{item.title}}</div>
+		</div>
+	{% endfor %}
+ </div>
+{% endmacro %}

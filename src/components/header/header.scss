@@ -1,0 +1,119 @@
+.header {
+	padding: 21px 0;
+	border-bottom: 1px solid #CFCFCF;
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	position: relative;
+	z-index: 101;
+	svg {
+		width: 89px;
+		height: 32px;
+	}
+}
+
+.search {
+	margin-left: auto;
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.cart {
+	position: relative;
+	margin-left: 26px;
+	&__count {
+		width: 13px;
+		height: 13px;
+		position: absolute;
+		top: -5px;
+		right: -5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 10px;
+		line-height: 12px;
+		color: #ffffff;
+		border-radius: 100%;
+		background-color: #3366FF;
+	}
+	svg {
+		width: 24px;
+		height: 21px;
+	}
+}
+
+.sandwich {
+  position: relative;
+	display: none;
+  width: 29px;
+  height: 25px;
+  z-index: 2;
+	margin-left: 32px;
+  border-radius: 1px;
+  @include ipad {
+    display: block;
+  }
+	&__inner {
+		display: block;
+		width: 29px;
+		height: 2px;
+		margin-top: 9px;
+		margin-left: 0;
+		background: #000000;
+		border-radius: 5px;
+		-webkit-transition: all 0.4s ease-in-out;
+		transition: all 0.4s ease-in-out;
+		transform: rotate(180deg);
+
+		&::before, &::after {
+			position: absolute;
+			content: "";
+			z-index: -1;
+			display: block;
+			width: 29px;
+			height: 2px;
+			background: #000000;
+			-webkit-transition: all 0.4s ease-in-out;
+			transition: all 0.4s ease-in-out;
+			border-radius: 5px;
+		}
+		&::before {
+			top: -8px;
+			width: 29px;
+		}
+		&::after {
+			top: 8px;
+			width: 29px;
+		}
+	}
+	&--open {
+		z-index: 101;
+		.sandwich__inner {
+			background: none;
+
+			&::before, &::after {
+				top: 0;
+			}
+			&::before {
+				width: 30px;
+				-webkit-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+			&::after {
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+

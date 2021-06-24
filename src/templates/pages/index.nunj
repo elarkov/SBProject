@@ -1,0 +1,40 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../../components/menu/menu.nunj" import menu %}
+{% from "../../components/legend/legend.nunj" import legend %}
+{% from "../../components/billing/billing.nunj" import billing %}
+{% from "../../components/promo-code/promo-code.nunj" import promo %}
+{% from "../../components/total/total.nunj" import total %}
+
+{# Пример расширения существующего блока #}
+{# Например можно использовать для добавления уникальных тайтлов для каждой страницы #}
+{# {% block title %}Home / {{ super() }}{% endblock title %} #}
+
+{% block content %}
+
+	{% include '../../components/header/header.nunj' %}
+
+	<main>
+		<div class="content">
+			<div class="container content__container">
+				<div class="main-content">
+					{{ legend() }}
+					{{billing()}}
+				</div>
+				{% include '../../components/sidebar/sidebar.nunj' %}
+			</div>
+		</div>
+	</main>
+
+
+
+		{# <div style="padding:20px 0;">
+			{{ button({
+				className: '',
+				children: 'Buy something',
+				chevronRight: true
+			}) }}
+		</div> #}
+
+
+{% endblock content %}

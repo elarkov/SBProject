@@ -1,0 +1,58 @@
+{
+	"menuItems": [
+		{
+			"name": "Women's",
+			"path": "#"
+		},
+		{
+			"name": "Men's",
+			"path": "#"
+		},
+		{
+			"name": "Home",
+			"path": "#"
+		},
+		{
+			"name": "Travel",
+			"path": "#"
+		},
+		{
+			"name": "Beauty",
+			"path": "#"
+		},
+		{
+			"name": "Sale",
+			"path": "#"
+		}
+	],
+	"legendData": [
+		{
+			"number": "1",
+			"title": "Account"
+		},
+		{
+			"number": "2",
+			"title": "Shipping"
+		},
+		{
+			"number": "3",
+			"title": "Billing"
+		},
+		{
+			"number": "4",
+			"title": "Review"
+		}
+	],
+	"basketList": [
+		{
+			"imgSrc": "product-1.png",
+			"description": "Amet minim mollit non deserunt ullamco est sit",
+			"price": "525"
+		},
+		{
+			"imgSrc": "product-2.png",
+			"description": "Amet minim mollit non",
+			"price": "520"
+		}
+	]
+}

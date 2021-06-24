@@ -1,0 +1,15 @@
+{% from "../../components/button/button.nunj" import button %}
+{% macro promo() %}
+	<div class="promo-code__field">
+		<input class="promo-code__input" type="text" placeholder="Placeholder Text">
+		{{
+				button({
+					className: 'promo-code__button',
+					children: 'Apply',
+					type: 'submit'
+				})
+			}}
+	</div>
+{% endmacro %}
+
+

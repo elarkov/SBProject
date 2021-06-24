@@ -1,0 +1,23 @@
+{% macro total() %}
+
+
+		<table class="total-table">
+			<tr>
+				<td>Subtotal</td>
+				<td id="subtotal"> $ 0</td>
+			</tr>
+			<tr>
+				<td>Tax</td>
+				<td id="tax">$ 0</td>
+			</tr>
+			<tr>
+				<td>Shipping</td>
+				<td id="shipping">$ 0</td>
+			</tr>
+			<tr>
+				<td>Total</td>
+				<td id="total">$ 0</td>
+			</tr>
+		</table>
+
+	{% endmacro %}

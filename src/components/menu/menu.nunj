@@ -1,0 +1,26 @@
+{% macro menu(active=false) %}
+	<nav class="menu">
+		<a href="#" class="logo">
+			<svg><use xlink:href="#icon-logo"></use></svg>
+		</a>
+
+		<ul class="menu-list">
+		{% for item in menuItems %}
+			<li class="menu-list__item">
+				<a href="{{ item.path }}" class="menu-list__link{% if item.id == activeItem %} _active{% endif %}">{{ item.name }}</a>
+			</li>
+		{% endfor %}
+		</ul>
+
+		<div class="search">
+			<svg><use xlink:href="#icon-search"></use></svg>
+		</div>
+		<div class="cart">
+			<div class="cart__count">0</div>
+			<svg><use xlink:href="#icon-cart"></use></svg>
+		</div>
+		<div class="sandwich">
+			<div class="sandwich__inner"></div>
+		</div>
+	</nav>
+{% endmacro %}
